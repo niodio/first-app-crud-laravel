@@ -47,7 +47,7 @@ Route::resource('products', ProductController::class);
 -   **Criando o controller ProductController com o comando abaixo**
 -   **php artisan make:controller ProductController --resource --model=Product**
 
-### Adciona Arquivos Blade
+### Adiciona Arquivos Blade
 
 -   **Crie as view blade no diretorio resources/view/products**
     (1) layout.blade.php
@@ -58,3 +58,7 @@ Route::resource('products', ProductController::class);
 
 -   **Rode o comando php artisan serve**
 -   **Acesse http://localhost:8000/products**
+
+#Minhas observações:
+
+Para um primeiro contato com Laravel, achei o framework bastante intuitivo mas ainda tenho muito a aprender, repetição leva à perfeição.
