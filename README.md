@@ -7,19 +7,54 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
 </p>
 
-## About Laravel
+## Sobre o App
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an e
+Meu primeiro web app creado com laravel, um simples crud.
 
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
+### Install Laravel
 
+-   **composer create-project --prefer-dist laravel/laravel blog**
+
+### Configurando a DataBase
+
+-   **.env**
+
+DB_CONNECTION=mysql
+DB_HOST=127.0.0.1
+DB_PORT=3306
+DB_DATABASE=here your database name(blog)
+DB_USERNAME=here database username(admin)
+DB_PASSWORD=here database password(admin)
+
+### Create Migration
+
+-   **php artisan make:migration create_products_table --create=products**
+
+Após este comando, teremos o diretório "database/migrations"
+
+-   **Crie uma database com o nome blog**
+-   **Rode o comando... php artisan migrate**
+
+### Add Resource Route
+
+-   **Abra o arquivo "routes/web.php"**
+
+use App\Http\Controllers\ProductController;
+Route::resource('products', ProductController::class);
+
+### Add Controller and Model
+
+-   **Criando o controller ProductController com o comando abaixo**
+-   **php artisan make:controller ProductController --resource --model=Product**
+
+### Adciona Arquivos Blade
+
+-   **Crie as view blade no diretorio resources/view/products**
+    (1) layout.blade.php
+    (2) index.blade.php
+    (3) create.blade.php
+    (4) edit.blade.php
+    (5) show.blade.php
+
+-   **Rode o comando php artisan serve**
+-   **Acesse http://localhost:8000/products**
